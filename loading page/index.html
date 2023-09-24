@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=`"width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+    <h1>Your request has been submitted</h1>
+    <h1>It will take some time to collect all data data</h1>
+    <h1>Please check for results in results section after some time</h1>
+    <h1>Collect and process all data</h1>
+    </div>
+</body>
+<script>
+   // Get all the lines of text
+const lines = document.querySelectorAll('h1');
+
+// Function to show each line with a delay
+function showLinesWithDelay(index) {
+    if (index < lines.length) {
+        lines[index].classList.add('visible');
+        setTimeout(() => {
+            showLinesWithDelay(index + 1);
+        }, 1500); // Delay for 1 second
+    }
+}
+
+// Start showing lines with a delay
+showLinesWithDelay(0);
+</script>
+</html>
