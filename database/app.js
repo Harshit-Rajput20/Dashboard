@@ -1,6 +1,6 @@
 const express = require("express");
- 
-
+const path = require('path'); 
+const fs = require('fs');
 const app = express();
 
 
@@ -60,24 +60,56 @@ const dataToInsert = {
   };
   
   // SQL query to insert data into the profile_data table
-  const insertQuery = 'INSERT INTO profile_data SET ?';
+  // const insertQuery = 'INSERT INTO profile_data SET ?';
   
-  // Execute the query
-  pool.query(insertQuery, dataToInsert, (error, results) => {
-    if (error) {
-      console.error('Error inserting data:', error);
-    } else {
-      console.log('Data inserted successfully:', results);
+  // // Execute the query
+  // pool.query(insertQuery, dataToInsert, (error, results) => {
+  //   if (error) {
+  //     console.error('Error inserting data:', error);
+  //   } else {
+  //     console.log('Data inserted successfully:', results);
+  //   }
+  // });
+
+
+  const filePath = path.join(__dirname, '../public/index.html');
+  console.log(filePath);
+
+  const jsonPath = 'data.json';
+
+  fs.readFile(jsonPath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading the file:', err);
+      return;
+    }
+  
+    // Parse the JSON data
+    try {
+      const jsonData = JSON.parse(data);
+  
+      // Now you can access and work with the data
+
+       
+      for (const post of jsonData) {
+        console.log('Post URL:', post.postUrl);
+  
+        // Loop through comments for each post
+        for (const comment of post.comments) {
+          console.log('Comment Analysis:', comment.analised);
+        }
+      }
+    } catch (parseError) {
+      console.error('Error parsing JSON:', parseError);
     }
   });
 
-
 app.get("/" ,(req,res)=>{
 
-    console.log("home");
+
+  res.sendFile(filePath);
 
 })
 
-app.listen(5000 , ()=>{
+app.listen(8001 , ()=>{
  console.log("listening from server");
 })

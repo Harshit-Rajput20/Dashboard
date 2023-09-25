@@ -23,12 +23,13 @@
 
 .form-box{
     width: 380px;
-    height: 480px;
+    height: 680px;
     position: relative;
     margin: 6% auto;
     /* background: #fff; */
     padding: 5px;
     overflow: hidden;
+    line-height: 65px;
 
     /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); */
   /* border-radius: 20px;
@@ -50,17 +51,18 @@
 }
 
 .button-box{
-    width: 220px;
+    width: 250px;
     margin: 35px auto;
     position: relative;
+    text-align: center;
     /* box-shadow: 0 0 20px 9px  #ff61241f; */
-    border-radius: 80px;
+    border-radius: 10px;
 
 }
 
 
 
-#btn{
+/* #btn{
     top: 0;
     left: 0;
     position: absolute;
@@ -69,7 +71,7 @@
     background: linear-gradient(to left, #1d2634, #5a5a5d);
     border-radius: 30px;
     transition: .5s;
-}
+} */
 .toggle-btn{
     padding: 10px 30px;
     cursor: pointer;
@@ -152,4 +154,18 @@ span{
 
 #register{
     left: 450px;
+}
+
+
+
+#prev_result{
+    padding:10px 90px;
+    border: none;
+    margin-left: 6px;
+    margin-top: 40px;
+    border-radius: 10px;
+    background: #c6c6cb;
+    color: #1d2634;
+    font-size: 15px;
+
 }

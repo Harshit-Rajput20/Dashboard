@@ -10,6 +10,15 @@ body{
     color: #9e9ea4;
 }
 
+.prev-btn{
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #9e9ea4;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
 .container{
     display: flex;
     justify-content: center;

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dash.css">
+  </head>
+  <body>
+    <div class="grid-container">
+
+      <!-- Header -->
+      
+
+      <!-- Main -->
+      <main class="main-container">
+        <div class="main-title">
+          <h2> DASHBOARD</h2>
+          <div class="pos"> 
+            <h2>@hmoindia</h2>
+          <img src="Screenshot from 2023-09-25 08-50-54.png" height="100" width="100" class="img">
+          </div>
+        </div>
+
+        <div class="main-cards">
+
+          <div class="card">
+            <div class="card-inner">
+              <h3>TOTAL POSTS</h3>
+              <span class="material-icons-outlined">inventory_2</span>
+            </div>
+            <h1>84</h1>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <h3>TOTAL COMMENTS</h3>
+              <span class="material-icons-outlined">category</span>
+            </div>
+            <h1>2615</h1>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <h3>TOTAL FOLLOWERS</h3>
+              <span class="material-icons-outlined">groups</span>
+            </div>
+            <h1>265k</h1>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <h3>OVERALL PERCEPTION</h3>
+            
+            </div>
+            <h1>Political,Diplomacy</h1>
+          </div>
+
+        </div>
+
+        <div class="charts">
+
+          <div class="charts-card">
+            <h2 class="chart-title">SENTIMENTS</h2>
+            <div id="donut-chart"></div>
+          </div>
+
+          <div class="charts-card">
+            <h2 class="chart-title">POSITIVE AND NEGATIVE PERCEPTION</h2>
+            <div id="area-chart"></div>
+          </div>
+
+        </div>
+      </main>
+      <!-- End Main -->
+
+    </div>
+
+    <div class="container-two">    
+
+      <div class="charts-card-two" id="chartCard-two">
+           <div  class="chart-color"  id="positive-chart">
+            <h2 class="chart-title-two">Positive Sentiment</h2>
+           </div>
+           <div class="chart-color" id="negative-chart">
+            <h2 class="chart-title-two">Negative Sentiment</h2>
+           </div>
+           <div class="chart-color" id="political-chart">
+            <h2 class="chart-title-two">Political Sentiment</h2>
+           </div>
+           <div class="chart-color" id="sad-chart">
+            <h2 class="chart-title-two">Sad Sentiment</h2>
+           </div>
+           <div class="chart-color" id="angry-chart">
+            <h2 class="chart-title-two">Angry Sentiment</h2>
+           </div>
+           <div class="chart-color" id="surprise-chart">
+            <h2 class="chart-title-two">Surprise Sentiment</h2>
+           </div>
+      </div>
+ </div>
+
+ <div class="container2-two">    
+
+  <div class="charts-card2-two" id="chartCard2-two">
+       <div  class="chart-color"  id="disgust-chart">
+        <h2 class="chart-title">Disgust Sentiment</h2>
+       </div>
+       <div class="chart-color" id="joy-chart">
+        <h2 class="chart-title">Joy Sentiment</h2>
+       </div>
+       <div class="chart-color" id="hate-chart">
+        <h2 class="chart-title">Hate Sentiment</h2>
+       </div>
+       <div class="chart-color" id="grateful-chart">
+        <h2 class="chart-title">Grateful Sentiment</h2>
+       </div>
+       <div class="chart-color" id="empower-chart">
+        <h2 class="chart-title">Empowered Sentiment</h2>
+       </div>
+       <div class="chart-color" id="fearful-chart">
+        <h2 class="chart-title">Fearful Sentiment</h2>
+       </div>
+  </div>
+
+
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="dash.js"></script>
+  </body>
+</html>

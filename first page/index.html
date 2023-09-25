@@ -13,26 +13,27 @@
         <div class="form-box">
             <div class="button-box">
                 <div id="btn"></div>
-                <button class="toggle-btn" type="button" onclick="login()" >log in</button>
-                <button class="toggle-btn" type="button" onclick="register()">Register</button>
+                <h7>  Enter URL group to analize </h7>
+                <!-- <button class="toggle-btn" type="button" onclick="register()">Register</button> -->
             </div>
-            <form id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="User id">
-                <input type="text" class="input-field" placeholder="Enter password">
+                <!-- <input type="text" class="input-field" placeholder="User id"> -->
+                <input type="text" class="input-field" id ='ig' placeholder="Instagram">
+                <input type="text" class="input-field" placeholder="Twitter">
+                <input type="text" class="input-field" placeholder="Facebook">
+                <input type="text" class="input-field" placeholder="Linkdin">
+                <input type="text" class="input-field" placeholder="Pinetrest">
                 
-                <button class="submit-btn" type="submit">log in</button>
-            </form>
-            <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="User id">
-                <input type="email" class="input-field" placeholder="Email id">
-                <input type="text" class="input-field" placeholder="Enter password">
-                
-                <button class="submit-btn" type="submit">Register</button>
-            </form>
+               <a href="load.html">  <button class="submit-btn"  id="submit-btn">Search</button> </a>
+
+              <a href= "result.html">  <button   id="prev_result" >View Previous Result</button></a>
+    
+            
+          
         </div>
     </div>
 
     <script>
+        const scraperIp ='http://192.168.167.238:8000'
         var x = document.getElementById("login");
         var y = document.getElementById("register");
         var z = document.getElementById("btn");
@@ -52,6 +53,38 @@
               z.style.left = "0px";
   
           }
+
+          const search = document.getElementById("submit-btn");
+
+          search.addEventListener("click" , ()=>{
+
+            profile_url =document.getElementById("ig").value
+            console.log(profile_url) 
+            const apiUrl = `${scraperIp}/process-profile?profile_url=${(profile_url)}`;
+
+            // Make the GET request
+            fetch(apiUrl)
+            .then((response) => {
+                if (!response.ok) {
+                throw new Error("Network response was not ok");
+                }
+                return response.json(); // Assuming the response is JSON data
+            })
+            .then((data) => {
+                // Handle the response data here
+                console.log("Response data:", data);
+            })
+            .catch((error) => {
+                console.error("Fetch error:", error);
+            });
+        }
+
+
+        )
+
+     
+       
+
     </script>
 </body>
 </html>
